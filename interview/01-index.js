@@ -14,5 +14,5 @@ function odd_even_product( my_list ) {
 
  return sum
 }
-
+ 
 console.log(odd_even_product([5,7,9]))
