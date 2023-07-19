@@ -8,14 +8,14 @@ Boolean("JavaScript"); //true;
 Boolean(""); // false
 
 function removeFalsyValue(arr) {
-  // return arr.filter(Boolean)
+   return arr.filter(Boolean)
   //another mehtod remove falsy value
-  let result = arr.filter((e) => {
-    if (e !== false || e !== null || e !== undefined || e !== NaN) {
-      return e;
-    }
-  });
-  return result;
+  // let result = arr.filter((e) => {
+  //   if (e !== false || e !== null || e !== undefined || e !== NaN || e!=="") {
+  //     return e;
+  //   }
+  // });
+  // return result;
 }
 
 console.log(removeFalsyValue([1, null, 2, undefined, 3, false, 4, NaN]));
