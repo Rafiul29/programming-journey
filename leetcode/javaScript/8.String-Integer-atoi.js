@@ -1,5 +1,5 @@
 
-
+let str="   kfne knd  232  "
 var myAtoi = function (s) {
   let st = s.trim();
   let num = parseInt(st);
