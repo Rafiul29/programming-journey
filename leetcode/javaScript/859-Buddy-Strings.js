@@ -18,3 +18,5 @@ var buddyStrings = function(s, goal) {
 };
 
 console.log(buddyStrings("ab","ba"))
+
+
