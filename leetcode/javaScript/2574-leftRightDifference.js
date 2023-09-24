@@ -1,3 +1,4 @@
+let startTime = performance.now();
 var leftRightDifference = function(nums) {
     let leftSum=0;
     let leftSumA=[]
@@ -23,6 +24,8 @@ var leftRightDifference = function(nums) {
       }
       return answer
 };
+let endTime = performance.now();
+console.log(endTime - startTime);
 
 
 console.log(leftRightDifference([10,4,8,3]))
