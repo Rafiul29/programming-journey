@@ -20,7 +20,7 @@ class Students{
 // constructor
     Students(int roll,int cls,double cgpa){
         
-        // (*this)- derefernce
+    // (*this)- derefernce
     //   (*this).roll=roll;
     //   (*this).cls=cls;
     //   (*this).cgpa=cgpa;

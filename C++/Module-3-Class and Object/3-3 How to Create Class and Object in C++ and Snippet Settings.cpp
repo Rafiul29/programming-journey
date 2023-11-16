@@ -1,8 +1,5 @@
 //3-3 How to Create Class and Object in C++ and Snippet Settings
 
-
-
-// Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
 

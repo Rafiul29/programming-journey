@@ -1,6 +1,5 @@
 // 3-7 Create Dynamic Object in C++ using function
 
-// Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
 
