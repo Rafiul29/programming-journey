@@ -23,6 +23,7 @@ x=xma/2;
 plot(x,y);
 hold on;
 end
+
 title('Scaling a triangle according to scaling factor');
 line([400+x1,400+x2],[300+y1,300+y2]);
 line([400+x2,400+x3],[300+y2,300+y3]);
