@@ -29,7 +29,7 @@ line([400+xmin,400+xmax],[300+ymin,300+ymin]);
 line([400+xmin,400+xmin],[300+ymin,300+ymax]);
 line([400+xmin,400+xmax],[300+ymax,300+ymax]);
 line([400+xmax,400+xmax],[300+ymin,300+ymax]);
-43
+
 for i=1:4
 c(i)=0;
 end
