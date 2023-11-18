@@ -18,13 +18,12 @@ for i=1:480
     plot(x,y);
 hold on;
 end
-
 title('Bresenham Algorithm for m>1 ');
-
+xlabel("X-axis")
+ylabel("Y-axis")
 %calculate the difference x-axis and y-axis
 dx=abs(x2-x1);
 dy=abs(y2-y1);
-
 if(dx<dy)
     if(x1>x2)
         x=x2;
@@ -35,10 +34,8 @@ if(dx<dy)
         y=y1;
         xend=x2;
      end
-
  %decision parameter
  p=2*dx-dy;
-
  while(x<=xend)
      y=y+1;
   if p<0
@@ -47,10 +44,9 @@ if(dx<dy)
      x=x+1;
      p=p+2*(dx-dy);
   end
-  plot(320+x,240+y,"ok");
+  plot(320+x,240+y,"k.");
   hold on;
  end
-
 else
 legend(sprintf('Invalid Input'));
 end

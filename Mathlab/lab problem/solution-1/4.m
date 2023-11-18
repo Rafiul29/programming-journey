@@ -17,6 +17,7 @@ for i=1:480
     plot(x,y);
 hold on;
 end
+
 plot(320+xc,240+yc,'*');
 
 %assgin the x and y value
@@ -37,16 +38,16 @@ while(x<=y)
         p=p+4*(x-y)+10;
     end
 
-plot(320+xc+x,240+yc+y,"ok");
-plot(320+xc+y,240+yc+x,"ok")
-plot(320+xc-x,240+yc+y,"ok");
-plot(320+xc-y,240+yc+x,"ok");
-plot(320+xc-x,240+yc-y,"ok");
-plot(320+xc-y,240+yc-x,"ok");
-plot(320+xc+y,240+yc-x,"ok");
-plot(320+xc+x,240+yc-y,"ok");
+plot(320+xc+x,240+yc+y,"k.");
+plot(320+xc+y,240+yc+x,"k.")
+plot(320+xc-x,240+yc+y,"k.");
+plot(320+xc-y,240+yc+x,"k.");
+plot(320+xc-x,240+yc-y,"k.");
+plot(320+xc-y,240+yc-x,"k.");
+plot(320+xc+y,240+yc-x,"k.");
+plot(320+xc+x,240+yc-y,"k.");
 
-  fprintf("x=%d y=%d\n",x,y);
+ fprintf("x=%d y=%d\n",x,y);
   hold on,grid on;
 end
 

@@ -1,72 +1,82 @@
-clear all;
-xma=800;
-yma=600;
-disp('Enter lower left corner coordinate (xmin,ymin):');
-xmin=input('');
-ymin=input('');
-disp('Enter upper right corner coordinate (xmax,ymax):');
-xmax=input('');
-ymax=input('');
-n=input('Number of line : ');
-for k=1:n
-x1=input('Enter starting point x coordinate :');
-y1=input('Enter starting point y coordinate :');
-x2=input('Enter ending point x coordinate :');
-y2=input('Enter ending point y coordinate :');
-for i=1:800
-x=i;
-y=yma/2;
-plot(x,y);
-hold on;
-end
-for i=1:600
-y=i;
-x=xma/2;
-plot(x,y);
-hold on;
-end
-line([400+xmin,400+xmax],[300+ymin,300+ymin]);
-line([400+xmin,400+xmin],[300+ymin,300+ymax]);
-line([400+xmin,400+xmax],[300+ymax,300+ymax]);
-line([400+xmax,400+xmax],[300+ymin,300+ymax]);
+%Draw a line and clip it using Liang-Barsky algorithm
 
-for i=1:4
-c(i)=0;
+clc;
+close all;
+
+disp('Enter 2 endpoints of line as (x1, y1) and (x2, y2)');
+x1 = input("Enter the value of x1: ");
+y1 = input("Enter the value of y1: ");
+x2 = input("Enter the value of x2: ");
+y2 = input("Enter the value of y2: ");
+
+disp('Enter 2 corners (left-bottom & right-top) of the clipping window');
+x_min = input("Enter the value of Xmin: ");
+y_min = input("Enter the value of Ymin: ");
+x_max = input("Enter the value of Xmax: ");
+y_max = input("Enter the value of Ymax: ");
+
+
+% Initialize Liang-Barsky algorithm variables
+dx = x2 - x1;
+dy = y2 - y1;
+p = [-dx, dx, -dy, dy];
+q = [x1 - x_min, x_max - x1, y1 - y_min, y_max - y1];
+u1 = 0;
+u2 = 1;
+
+% Liang-Barsky algorithm
+for k = 1:4
+    if(p(k) == 0 && q(k) < 0)
+        return;
+
+    elseif(p(k) < 0)
+        r = q(k) / p(k);
+        if r > u1
+            u1 = r;
+        end
+
+    elseif(p(k) > 0)
+        r = q(k) / p(k);
+        if(r < u2)
+            u2 = r;
+        end
+    end
 end
-x=x1;
-y=y1;
-if(x<xmin)
-c(4)=1;
-elseif(x>xmax)
-c(3)=1;
-elseif(y<ymin)
-c(2)=1;
-elseif(y>ymax)
-c(1)=1;
+
+% Calculate clipped line coordinates
+xc1 = x1 + u1 * dx;
+yc1 = y1 + u1 * dy;
+xc2 = x1 + u2 * dx;
+yc2 = y1 + u2 * dy;
+
+% Before clipping
+subplot(2, 1, 1);
+% Plot the clipping window
+rectangle('Position', [x_min, y_min, x_max - x_min, y_max - y_min], 'EdgeColor', 'k', 'LineWidth', 1);
+hold on;
+plot([x1, x2], [y1, y2], 'k', 'LineWidth', 1);
+title('Line before clipping');
+grid minor;
+drawXandYasis(x1, y1, x2, y2, x_min, y_min, x_max, y_max);
+
+% After clipping
+subplot(2, 1, 2);
+% Plot the clipping window
+rectangle('Position', [x_min, y_min, x_max - x_min, y_max - y_min], 'EdgeColor', 'k', 'LineWidth', 1);
+hold on;
+% Plot the clipped line
+if(u1 < u2)
+    plot([xc1, xc2], [yc1, yc2], 'r', 'LineWidth', 1);
 end
-a=c(1)*8+c(2)*4+c(3)*2+c(4);
-for i=1:4
-c(i)=0;
+
+title('Line after clipping using Liang-Barsky Algorithm');
+
+grid minor;
+drawXandYasis(x1, y1, x2, y2, x_min, y_min, x_max, y_max);
+
+function drawXandYasis(x1, y1, x2, y2, x_min, y_min, x_max, y_max)
+% Draw x and y axis
+xlabel('x');
+ylabel('y');
+axis([min([x1, x2, x_min, -5])-1 max([x1, x2, x_max, 5])+1 min([y1, y2, y_min, -5])-1 max([y1, y2, y_max, 5])+1]); % Set axis limits as desired
 end
-x=x2;
-y=y2;
-if(x<xmin)
-c(4)=1;
-elseif(x>xmax)
-c(3)=1;
-elseif(y<ymin)
-c(2)=1;
-elseif(y>ymax)
-c(1)=1;
-end
-b=c(1)*8+c(2)*4+c(3)*2+c(4);
-d=a & b;
-if(a==0 && b==0)
-disp('Line is visible');
-elseif(d==0)
-disp('Line is clipping candidate');
-else
-disp('Line is not visible');
-end
-end
-title('Cohen Sutherland line clipping algorithm to find lines category');

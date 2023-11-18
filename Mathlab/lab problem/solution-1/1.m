@@ -42,14 +42,15 @@ Yin=dy/s;
 for i=1:s
     x=x+Xin;
     y=y+Yin;
-  plot(round(320+x),round(240+y));
+  plot(round(320+x),round(240+y),"k.");
 end
 grid on,hold on;
 
 
 
 
-// slope using 
+
+% slope using 
 xmax=640;
 ymax=480;
 
@@ -64,6 +65,7 @@ y=ymax/2;
 plot(x,y);
 hold on;
 end
+
 for i=1:480
 y=i;
 x=xmax/2;
@@ -86,7 +88,8 @@ if(abs(dx)>=abs(dy))
       dx=1;
       x=x+dx;
       y=y+m;
-      plot(320+x,240+y,"ok");
+    %fprintf("%d = %d\n",x,y);
+      plot(320+x,240+y,"k.");
   end 
 elseif(abs(dx)<abs(dy))
   s=dy;
@@ -94,12 +97,11 @@ elseif(abs(dx)<abs(dy))
       dy=1;
       x=x+1/m;
       y=y+dy;
-      plot(320+x,240+y,"ok");
+       %fprintf("%d = %d\n",x,y);
+      plot(320+x,240+y,"k.");
   end    
 end
 grid on,hold on;
-
-
 
 
 

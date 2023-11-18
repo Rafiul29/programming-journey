@@ -3,6 +3,7 @@ ymax=480;
 xc=input('Enter the center x coordinate: ');
 yc=input('Enter the center y coordinate: ');
 r=input('Enter radious r of this circle: ');
+
 for i=1:640
     x=i;
     y=ymax/2;

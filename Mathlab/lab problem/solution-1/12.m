@@ -26,12 +26,12 @@ plot(x,y);
 grid on,hold on;
 end
 
-% Initialize Bezier matrix
-Bezier_Matrix = [-1 3 -3 1; 3 -6 3 0; -3 3 0 0; 1 0 0 0];
+% Initialize Bspline matrix
+Bspline_Matrix = (1/6) * [-1 3 -3 1; 3 -6 3 0; -3 0 3 0; 1 4 1 0];
 
 for u = 0:0.001:1
-    Px = [u^3 u^2 u 1] * Bezier_Matrix * [x1; x2; x3; x4];
-    Py = [u^3 u^2 u 1] * Bezier_Matrix * [y1; y2; y3; y4];
+    Px = [u^3 u^2 u 1] * Bspline_Matrix * [x1; x2; x3; x4];
+    Py = [u^3 u^2 u 1] * Bspline_Matrix * [y1; y2; y3; y4];
     plot(320+Px, 240+Py, 'k.');
     grid on,hold on;
 end
