@@ -3,23 +3,32 @@ using namespace std;
 
 int main()
 {
-   int n,q;
+  long long int n,q;
    cin>>n>>q;
-   vector <int> arr;
+   vector <long long int> arr;
    for(int i=0;i<n;i++){
        int x;
        cin>>x;
        arr.push_back(x);
    }
    
+    for(int i=1;i<n;i++){
+       
+      arr[i]=arr[i]+arr[i-1];
+   }
+
    while(q--){
        int l,r;
        cin>>l>>r;
-       int sum=0;
-       for(int i=l-1;i<r;i++){
-           sum+=arr[i];
-       }
-    cout<<sum<<endl;
+       l--;
+       r--;
+      long long int sum=0;
+        if(l==0){
+            sum=arr[r];
+        }else{
+           sum=arr[r]-arr[l-1];
+        }
+        cout<<sum<<endl;
    }
     return 0;
 }
