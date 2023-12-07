@@ -68,3 +68,15 @@ int main()
     
     print_liked_list(head);
 }
+
+
+
+```title: "Course 1",
+    instructor: "Instructor 1",
+    duration: "4 weeks",
+    rating: 4.5,
+    description: "This is the first course description.",
+    category:["ejdne","ede2","2ede2"],
+    price: 49.99,
+    students: 100,
+    link: "https://example.com/course1"```
