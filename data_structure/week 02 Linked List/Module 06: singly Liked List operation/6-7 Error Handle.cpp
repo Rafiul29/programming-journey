@@ -63,7 +63,7 @@ void insert_at_head(Node *&head,int v){
     return;
 }
 
-void delete_from_positin(Node* head,int pos){
+void delete_from_position(Node* head,int pos){
     Node *tmp=head;
     for(int i=1;i<=pos-1;i++){
         tmp=tmp->next;
