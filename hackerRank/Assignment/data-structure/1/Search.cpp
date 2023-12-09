@@ -47,7 +47,7 @@ void insert_tail(Node *&head,Node *&tail,int val){
     tail=newNode;
 }
 
-int searchValue(Node *head, int x){
+int searchV9-4 Insert at Head and Tail in Doubly Linked Listalue(Node *head, int x){
     Node *tmp=head;
     int indx=0;
     while(tmp!=NULL){
