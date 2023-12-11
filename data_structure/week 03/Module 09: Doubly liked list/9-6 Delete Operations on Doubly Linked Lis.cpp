@@ -236,17 +236,25 @@ void delete_at_position(Node *head,int pos){
     temp->next->prev=temp;
     delete deleteNode;
 }
-void delete_tail(Node *&tail){
+void delete_tail(Node *&head,Node *&tail){
     Node *deleteNode=tail;
     tail=tail->prev;
     delete deleteNode;
+    if(tail=NULL){
+        head=NULL;
+        return;
+    }
     tail->next=NULL;
 }
 
-void delete_head(Node *&head){
+void delete_head(Node *&head,Node *&tail){
     Node *deleteNode=head;
     head=head->next;
     delete deleteNode;
+    if(head==NULL){
+        tail=NULL;
+        return;
+    }
     head->prev=NULL;
 }
 
@@ -275,9 +283,9 @@ int main()
         cout<<"invalid";
     }
     else if(pos==0){
-        delete_head(head);
+        delete_head(head,tail);
     }else if(pos==size(head)-1){
-        delete_tail(tail);
+        delete_tail(head,tail);
     }else{
         delete_at_position(head,pos);
     }

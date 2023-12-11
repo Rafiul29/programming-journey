@@ -77,51 +77,49 @@ int size(Node *head){
     return cnt;
 }
 
-void delete_at_position(Node *head,int pos){
-    Node *temp=head;
-    for(int i=1;i<=pos-1;i++){
-        temp=temp->next;
+void reverse(Node *head,Node *tail){
+    Node *i=head;
+    Node *j=tail;
+    while(i!=j && i->next!=j){
+        swap(i->val,j->val);
+        i=i->next;
+        j=j->prev;
     }
-    Node *deleteNode=temp->next;
-    temp->next=temp->next->next;
-    temp->next->prev=temp;
-    delete deleteNode;
-}
-void delete_tail(Node *&tail){
-    Node *deleteNode=tail;
-    tail=tail->prev;
-    delete deleteNode;
-    if(tail=NULL){
-        head=NULL;
-        return;
-    }
-    tail->next=NULL;
-}
-
-void delete_head(Node *&head,Node *&tail){
-    Node *deleteNode=head;
-    head=head->next;
-    delete deleteNode;
-    if(head==NULL){
-        tail=NULL;
-        return;
-    }
-    head->prev=NULL;
 }
 
 int main()
 {
-    Node *head=NULL;
-    Node *tail=NULL;
-   
-   int val;
-   while(true){
-       cin>>val;
-       if(val==-1) break;
-       insert_at_tail(head,tail,val);
-   }
+    // Node *head=NULL;
+    // Node *tail=NULL;
+    Node  *head = new Node(10);
+    Node *a=new Node(20);
+    Node *b=new Node(30);
+    Node *c=new Node(40);
+    
+    Node *tail=c;
+    //connection
+    head->next=a;
+    a->prev=head;
+    a->next=b;
+    b->prev=a;
+    b->next=c;
+    c->prev=b;
+    
+    // int pos,val;
+    // cin>>pos>>val;
+    // if(pos==0){
+    //     insert_at_head(head,tail,val);
+    // }else if(pos==size(head)){
+    //     insert_at_tail(head,tail,val);
+    // }
+    // else if(pos>=size(head)){
+    //     cout<<"invalid Index";
+    // }else{
+    //     insert_at_position(head,pos,val);
+    // }
+    reverse(head,tail);
     print_next(head);
-    print_prev(tail);
+    // print_prev(tail);
     
     return 0;
 }
