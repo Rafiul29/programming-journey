@@ -85,6 +85,7 @@ void reverse(Node *head,Node *tail){
         i=i->next;
         j=j->prev;
     }
+    swap(j->val,j->val);
 }
 
 int main()
@@ -122,4 +123,4 @@ int main()
     // print_prev(tail);
     
     return 0;
-}
+} 
