@@ -12,6 +12,7 @@ int main()
 
   list<int> myList={10,20,30,20};
     myList.remove(20);
+    
     for(int val:myList){
         cout<<val<<endl;
     }
