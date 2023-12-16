@@ -80,67 +80,55 @@
 // Not Available
 // y
 
-
 #include<bits/stdc++.h>
 using namespace std;
-
-class Node{
-    public:
-     string str;
-     Node* next;
-     Node* prev;
-     
-    Node(string str){
-        this->str=str;
-        this->next=NULL;
-        this->next=NULL;
-    }
-};
-
-void insert_at_tail(Node *&head,Node *&tail,string str){
-    Node *newNode=new Node(str);
-    if(tail==NULL){
-        head=newNode;
-        tail=newNode;
-        return;
-    }
-    tail->next=newNode;
-    newNode->prev=tail;
-    tail=tail->next;
-}
-
-void print_next(Node *head){
-    Node *tmp=head;
-    while(tmp!=NULL){
-        cout<<tmp->str<<" ";
-        tmp=tmp->next;
-    }
-    cout<<endl;
-}
-
-
-int size(Node *head){
-     Node *tmp=head;
-     int cnt=0;
-    while(tmp!=NULL){
-       cnt++;
-        tmp=tmp->next;
-    }
-    return cnt;
-}
-
 int main()
 {
-    Node *head=NULL;
-    Node *tail=NULL;
-  
-  while(true){
-      string str;
-      cin>>str;
-      if(str=="end") break;
-      insert_at_tail(head,tail,str);
-  }
-  print_next(head);
+    list<string> addresses;
+    string address;
+    while(true){
+        cin>>address;
+        if(address=="end") break;
+        addresses.push_back(address);
+    }
+    
+    int q;
+    cin>>q;
+    
+    auto curnt=addresses.begin();
+    
+    for(int i=0;i<q;i++){
+        string cmd;
+        cin>>cmd;
+        if(cmd=="visit"){
+            string visitaddress;
+            cin>>visitaddress;
+            auto it =find(addresses.begin(),addresses.end(),visitaddress);
+            if(it!=addresses.end()){
+                curnt=it;
+                cout<<*curnt<<endl;
+            }else{
+                cout<<"Not Available"<<endl;
+            }
+            
+        }else if(cmd=="next"){
+            if(curnt!=addresses.end()){
+              curnt++;
+                cout<<*curnt<<endl;
+            }else{
+                 cout<<"Not Available"<<endl;
+            }
+        }
+        else if(cmd=="prev"){
+            if(curnt!=addresses.begin()){
+                curnt--;
+              cout<<*curnt<<endl;
+            }else{
+                 cout<<"Not Available"<<endl;
+            }
+        }
+    }
+    
     
     return 0;
 }

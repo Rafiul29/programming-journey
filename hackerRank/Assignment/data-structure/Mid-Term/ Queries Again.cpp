@@ -81,6 +81,7 @@
 // L -> 60 100 30 90 40 10 80 70 20 
 // R -> 20 70 80 10 40 90 30 100 60 
 
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -106,10 +107,18 @@ void insert_at_position( Node *head,int pos,int val){
     
     for(int i=1;i<=pos-1;i++){
         tmp=tmp->next;
+         if(tmp==NULL){
+        cout<<"Invalid"<<endl;
+        return;
     }
-    
+    }
+   
+   if(tmp->next==NULL){
+       return;
+   }
     newNode->next=tmp->next;
     tmp->next=newNode;
+    
     newNode->next->prev=newNode;
     newNode->prev=tmp;
 }
@@ -124,6 +133,7 @@ void insert_at_head(Node *&head,Node *&tail,int val){
     newNode->next=head;
     head->prev=newNode;
     head=newNode;
+    head->prev=NULL;
 }
 void insert_at_tail(Node *&head,Node *&tail,int val){
     Node *newNode=new Node(val);
@@ -135,6 +145,7 @@ void insert_at_tail(Node *&head,Node *&tail,int val){
     tail->next=newNode;
     newNode->prev=tail;
     tail=tail->next;
+    tail->next=NULL;
 }
 
 void print_next(Node *head){
