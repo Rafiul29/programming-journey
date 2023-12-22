@@ -60,8 +60,6 @@ class MyQueue{
         if(sz==0) return true;
         else return false;
     }
-    
-    
 };
 
 int main()
