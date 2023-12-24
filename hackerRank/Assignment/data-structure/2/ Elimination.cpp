@@ -47,3 +47,39 @@
 // NO
 // YES
 // NO
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    stack<char> s;
+    int t;
+    cin>>t;
+    while(t--){
+        string str;
+        cin>>str;
+        
+        for(char c:str){
+            if(c=='1'&& !s.empty() && s.top()=='0' ){
+                s.pop();
+            }else{
+                s.push(c);
+            }
+        }
+       
+        if(s.empty()){
+            cout<<"YES"<<endl;
+        }else{
+            cout<<"NO"<<endl;
+        }
+        while(!s.empty()){
+            s.pop();
+        }
+    }
+
+    return 0;
+}
