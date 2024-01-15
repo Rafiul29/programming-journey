@@ -92,7 +92,6 @@
 // 32
 // -86
 // -86
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -130,7 +129,10 @@ int main()
             }
         }
         else if(q==2){
-             pq.pop(); 
+              if(!pq.empty()){
+                 pq.pop(); 
+            }
+            
             if(!pq.empty()){
                  cout<<pq.top()<<endl; 
             }else{
