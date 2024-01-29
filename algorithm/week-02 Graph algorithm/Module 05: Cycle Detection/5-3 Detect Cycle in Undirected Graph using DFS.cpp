@@ -6,25 +6,21 @@ bool vis[N];
 vector<int> adj[N];
 int parArr[N];
 bool ans;
-void bfs(int s){
-   queue<int>q;
-   q.push(s);
-   vis[s]=true;
-   while(!q.empty()){
-       int parent=q.front();
-       cout<<parent<<endl;
-       q.pop();
-       for(int child:adj[parent]){
-           if(vis[child] && parArr[parent]!=child){
-               ans=true;
-           }
-          if(!vis[child]){
-            vis[child]=true;
+
+void dfs(int parent){
+    vis[parent]=true;
+    // cout<<parent<<endl;
+    for(int child:adj[parent]){
+        
+        if(vis[child]==true && parArr[parent]!=child){
+            ans=true;
+        }
+        if(vis[child]==false){
             parArr[child]=parent;
-           q.push(child);
-          }
-       }
-   }
+            dfs(child);
+            
+        }
+    }
 }
 
 int main() {
@@ -42,7 +38,7 @@ int main() {
     ans=false;
     for(int i=0;i<n;i++){
         if(!vis[i]){
-            bfs(i);
+            dfs(i);
         }
     }
 
