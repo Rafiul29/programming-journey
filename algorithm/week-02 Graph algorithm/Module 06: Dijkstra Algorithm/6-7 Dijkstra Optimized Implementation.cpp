@@ -45,7 +45,6 @@ void dijsktra(int src)
 
 int main()
 {
-
   int n, e;
   cin >> n >> e;
   while (e--)
