@@ -109,78 +109,77 @@
 // Sample Output 2
 
 // Negative Cycle Detected
-
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
+
 class Edge{
   public:
   ll u,v,c;  
-  Edge(int u,int v,int c){
+  Edge(ll u,ll v,ll c){
       this->u=u;
       this->v=v;
       this->c=c;
   }
 };
-const int N=1e3+5;
-ll dis[];
+const ll N=1e3+5;
+ll dis[N];
 
 int main() {
     
-    int n,e;
+    ll n,e;
     cin>>n>>e;
     vector<Edge> EdgeList;
     while(e--){
-        int u,v,c;
+        ll u,v,c;
         cin>>u>>v>>c;
         EdgeList.push_back(Edge(u,v,c));
     }
     
-    for(int i=0;i<n;i++){
-        dis[i]=1e18;
+    for(ll i=0;i<=n;i++){
+        dis[i]=LLONG_MAX;
     }
-    int s;
+    ll s;
     cin>>s;
     dis[s]=0;
     
-    for(int i=1;i<=n-1;i++){
-     for(Edge ed:EdgeList){
-        int u,v,c;
-        u=ed.u;
-        v=ed.v;
-        c=ed.c;
-        if(dis[u]<INT_MAX && dis[u]+c<dis[v]){
-            dis[v]=dis[u]+c;
-        }
+    for(ll i = 1; i <= n - 1; i++) {
+    for (Edge ed : EdgeList) {
+        ll u, v, c;
+        u = ed.u;
+        v = ed.v;
+        c = ed.c;
+        if (dis[u] < LLONG_MAX && dis[u] + c < dis[v]) {
+            dis[v] = dis[u] + c;
         }
     }
+}
     
     bool cycle = false;
-    for (Edge ed : EdgeList)
-  {
-    int u, v, c;
+    for (Edge ed : EdgeList) {
+    ll u, v, c;
     u = ed.u;
     v = ed.v;
     c = ed.c;
-    if (dis[u] < 1e18 && dis[u] + c < dis[v])
-    {
-      cycle = true;
-      break;
+    if (dis[u] < LLONG_MAX && dis[u] + c < dis[v]) {
+        cycle = true;
+        break;
     }
-  }
+}
+
 
   if (cycle)
   {
     cout << "Negative Cycle Detected";
   }
-  else
-  {
-   int t;
+  
+  if(!cycle){
+      ll t;
    cin>>t;
    while(t--){
-    int d;
+    ll d;
     cin>>d;
-        if(dis[d]==1e18){
+        if(dis[d]==LLONG_MAX){
             cout<<"Not Possible"<<endl;
         }else{
              cout<<dis[d]<<endl;
