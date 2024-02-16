@@ -45,7 +45,6 @@ int main() {
         int leaderB=dsu_find(b);
         if(leaderA==leaderB){
             cycle=true;
-            
         }else{
             dsu_union_by_size(a,b);
         }

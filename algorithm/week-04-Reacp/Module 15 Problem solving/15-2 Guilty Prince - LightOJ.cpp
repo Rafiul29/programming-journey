@@ -58,10 +58,10 @@ int main()
         }
       }
     }
-      cnt = 0;
-      memset(vis, false, sizeof(vis));
-      dfs(si, sj);
-      cout << "Case " << cs++ << ": " << cnt << endl;
+    cnt = 0;
+    memset(vis, false, sizeof(vis));
+    dfs(si, sj);
+    cout << "Case " << cs++ << ": " << cnt << endl;
   }
 
   return 0;
