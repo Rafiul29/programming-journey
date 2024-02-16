@@ -69,7 +69,7 @@ int main()
   leader.erase(unique(leader.begin(),leader.end()),leader.end());
   
   cout<<leader.size()-1<<endl;
-  for(int i;i<leader.size()-1;i++){
+  for(int i=0;i<leader.size()-1;i++){
     cout<<leader[i]<<" "<<leader[i+1]<<endl;
   }
 
