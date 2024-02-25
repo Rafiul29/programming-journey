@@ -80,6 +80,7 @@ using namespace std;
 const int N=1005;
 int mat[N][N];
 bool vis[N][N];
+
 vector<pair<int,int>>d={{0,1},{0,-1},{-1,0},{1,0}};
 
 int n,m;
@@ -116,11 +117,11 @@ int main() {
     memset(vis,false,sizeof(vis));
     
     int s1,d1,s2,d2;
-    cin>>s1>>d1;
-    cin>>s2>>d2;
+    cin>>s1>>s2;
+    cin>>d1>>d2;
     
-    dfs(s1,d1);
-    if(vis[s2][d2] == true) cout << "YES" << endl;
+    dfs(s1,s2);
+    if(vis[d1][d2] == true) cout << "YES" << endl;
     else cout << "NO" << endl;
     return 0;
 }

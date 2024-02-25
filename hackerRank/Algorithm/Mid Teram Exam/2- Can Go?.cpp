@@ -12,7 +12,7 @@
 
 // Input Format
 
-//     First line will contain 
+//     First line will contain
 
 // and
 // .
@@ -32,7 +32,7 @@
 
 // Output Format
 
-//     Ouput "YES" or "NO" for each test case if it is possible to go from 
+//     Ouput "YES" or "NO" for each test case if it is possible to go from
 
 // to using atmost
 
@@ -125,21 +125,24 @@ int main()
     dis[i] = INT_MAX;
   }
 
-    int s;
-    cin>>s;
+  int s;
+  cin >> s;
   dijsktra(s);
   int t;
-  cin>>t;
-  while(t--){
-      int d,dw;
-      cin>>d>>dw;
-      if(dis[d]<=dw){
-          cout<<"YES"<<endl;
-      }else{
-          cout<<"NO"<<endl;
-      }
+  cin >> t;
+  while (t--)
+  {
+    int d, dw;
+    cin >> d >> dw;
+    if (dis[d] <= dw)
+    {
+      cout << "YES" << endl;
+    }
+    else
+    {
+      cout << "NO" << endl;
+    }
   }
-  
+
   return 0;
 }
-
