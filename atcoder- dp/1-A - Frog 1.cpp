@@ -15,7 +15,7 @@ int frog_jump(int i){
      if(dp[i]!=-1) return dp[i];
      
      int cost=INT_MAX;
-    //  one
+    //one
      cost =min(cost,frog_jump(i-1)+abs(height[i]-height[i-1]));
      //two
      if(i>1) cost =min(cost,frog_jump(i-2)+abs(height[i]-height[i-2]));
