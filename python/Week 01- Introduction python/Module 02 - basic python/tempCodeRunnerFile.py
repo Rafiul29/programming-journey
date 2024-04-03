@@ -1,2 +1,3 @@
-from function import a_lot
-print(a_lot(2,3))
+numbers=[5,10,15,20,25,30,40,50]
+numbers[0]=31
+print(numbers)

@@ -3,6 +3,8 @@
 
 #index   0  1  2  3  4  5  6  7 
 numbers=[5,10,15,20,25,30,40,50]
+numbers[0]=31
+print(numbers)
 #index  -8 -7 -6 -5 -4 -3 -2 -1
 print(numbers[-1])
 
@@ -18,3 +20,4 @@ print(numbers[2:])
 print(numbers[:4])
 print(numbers[:])
 print(numbers[::-1])
+
