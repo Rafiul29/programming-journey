@@ -1,0 +1,28 @@
+Problem - 3
+a
+Write the difference between List and Dictionary of Python.
+											     10
+
+List
+Dictionary
+It is mutable.
+It is mutable.
+Lists are dynamic.
+Dictionary’s value can be of any data type but the key must be of an immutable type.
+
+
+Lists are stored in [ ] square brackets and the size can be changed.
+Dictionaries are stored in { } curly brackets and consist of key values.
+
+
+Slicing can be done.
+Slicing cannot be done.
+EX:
+fruits = ['apple', 'banana', 'orange', 'grape']
+
+
+Ex:
+person = {'name': 'Alice', 'age': 25, 'city': 'Wonderland'}
+
+
+
