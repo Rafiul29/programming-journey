@@ -14,3 +14,4 @@ for num in uniqA:
     elif cnt<num:
         removal_cnt+=cnt
 print(removal_cnt)
+
