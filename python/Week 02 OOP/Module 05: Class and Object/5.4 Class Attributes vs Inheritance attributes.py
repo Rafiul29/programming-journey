@@ -3,7 +3,7 @@
 
 #   def __init__(self,buyer):
 #     self.buyer=buyer
-  
+
 #   def add_to_cart(self,item):
 #     self.cart.append(item)
 
@@ -11,7 +11,6 @@
 # rafi.add_to_cart("sales")
 # rafi.add_to_cart("phone")
 # print(rafi.cart)
-
 
 class Shop:
   shopping_mall="Jumuna"
@@ -27,7 +26,6 @@ rafi=Shop("Rafi")
 rafi.add_to_cart("sales")
 rafi.add_to_cart("phone")
 print(rafi.cart)
-
 
 asfia=Shop('asfia')
 asfia.add_to_cart("sales")
