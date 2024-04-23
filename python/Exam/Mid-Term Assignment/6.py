@@ -52,8 +52,8 @@ class Hall:
 
 
 hall1=Hall(10,20,1)
-hall1.entry_show("111","Spider Man 1","09:00 AM")
-hall1.entry_show("222","Spider Man 2","12:00 PM")
+hall1.entry_show("abc","Spider Man 1","09:00 AM")
+hall1.entry_show("xyz","Spider Man 2","12:00 PM")
 
 hall1.book_seats("abc", [(1, 1)])
 hall1.book_seats("abc", [(5, 1)]) 

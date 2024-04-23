@@ -84,7 +84,6 @@ while run:
   else:
     if currentUser.name=="admin":
       print("Options : \n")
-
       print("1 : Add Book")
       print("2 : Show Users")
       print("3 : Show Books")
