@@ -9,35 +9,6 @@ class Shopping:
     print(f'buying: {item} for price: {price} and remaning: {amount-price}')
 
   @staticmethod
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   def multiply(a,b):
     print(a*b) 
 
