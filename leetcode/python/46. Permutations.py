@@ -9,3 +9,5 @@ class Solution:
         
 
 Solution.permutate(2,[1,2,3])
+
+for i, val in (enumerate
