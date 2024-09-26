@@ -192,6 +192,15 @@ void sort_linked_list(Node *&head)
   }
 }
 
+void reverse_linked_list(Node *&head, Node *current){
+      if(current->next==NULL){
+        head=current;
+        return;
+      }
+      reverse_linked_list(head,current->next);
+      current->next->next=current;
+      current->next=NULL;
+}
 
 int main()
 {
@@ -219,6 +228,7 @@ int main()
     cout << "6. Delete tail Node" << endl;
     cout << "7. Linked List size" << endl;
     cout << "8. Linked List Sort" << endl;
+    cout << "9. Reverse Linked List" << endl;
     cout << "10. Print All Node" << endl;
     cout << "11. Print All Node Reverse Order" << endl;
     cout << "12. Break" << endl;
@@ -274,6 +284,10 @@ int main()
     else if (ch == 8)
     {
       sort_linked_list(head);
+    }
+    else if (ch == 9)
+    {
+      reverse_linked_list(head,head);
     }
     else if (ch == 10)
     {
