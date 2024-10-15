@@ -1,0 +1,1 @@
+print('Hello','Rafiul islam' ,sep='$',end='|')
