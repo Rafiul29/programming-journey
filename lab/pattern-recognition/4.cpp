@@ -13,6 +13,7 @@ vector<double> sample[55], seed[10]; // Store up to 55 samples and 10 seeds
 
 void list_dir(const char *path, vector<string> &names)
 {
+
     DIR *dir = opendir(path);
     if (dir == nullptr)
         return;
@@ -56,10 +57,9 @@ void read_data(const string &path, vector<double> &data)
 
 int main()
 {
- // List files in sample and seed directories
+    // List files in sample and seed directories
     list_dir("/home/ubuntu/Desktop/code/programming-journey/lab/pattern-recognition/sample/unknown/", file_name);
     list_dir("/home/ubuntu/Desktop/code/programming-journey/lab/pattern-recognition/sample/seedpoint", seed_name);
-
 
     // Load data for samples
     for (size_t i = 0; i < file_name.size(); ++i)

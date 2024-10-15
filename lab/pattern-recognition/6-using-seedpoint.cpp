@@ -27,6 +27,9 @@ void list_dir(const char *path, vector<string> &names)
     if (ss != "." && ss != "..") // Skip "." and ".."
       names.push_back(ss);
   }
+  // for(int i=0;i<file_name.size();i++){
+  //   cout<<file_name[0]<<endl;
+  // }
   closedir(dir);
 }
 // Euclidean distance calculation between sample and centroid

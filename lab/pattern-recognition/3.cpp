@@ -93,7 +93,7 @@ int main()
     // Perform classification based on Maximum Distance
     for (int i = 0; i < file_name.size(); ++i)
     {
-        double max_dist = -1;
+        double max_dist = -99999999;
         int best_seed = -1;
         for (int j = 0; j < seed_name.size(); ++j)
         {

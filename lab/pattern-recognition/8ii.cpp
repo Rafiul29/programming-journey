@@ -115,31 +115,25 @@ void hierarchicalClustering(vector<Point> &data)
 
 int main()
 {
-    // FILE *f = fopen("words_input.txt", "r");
+    FILE *f = fopen("words_input.txt", "r");
 
-    // if (f == NULL)
-    // {
-    //     cout << "Error opening file!" << endl;
-    //     return 1;
-    // }
+    if (f == NULL)
+    {
+        cout << "Error opening file!" << endl;
+        return 1;
+    }
 
     vector<Point> data;
     int x, y;
 
     // Reading data from the file
-    // while (fscanf(f, "%d %d", &x, &y) != EOF)
-    // {
-    //     data.push_back({x, y});
-    // }
-    // fclose(f);
-    
-    int n;
-    cout<<"Enter Sample Data: ";
-    cin>>n;
-    for(int i=0;i<n;i++){
-        cin>>x>>y;
+    while (fscanf(f, "%d %d", &x, &y) != EOF)
+    {
         data.push_back({x, y});
     }
+    fclose(f);
+    
+
 
 
     // Perform hierarchical clustering

@@ -30,7 +30,7 @@ void list_dir(const char *path, vector<string> &names)
 double calculate_distance(int a, int b)
 {
     double result = 0;
-    for (size_t i = 0; i < sample[a].size(); ++i)
+    for (int i = 0; i < sample[a].size(); ++i)
     {
         double diff = fabs(sample[a][i] - seed[b][i]);
         result += diff * diff; // Squared difference
@@ -56,34 +56,36 @@ void read_data(const string &path, vector<double> &data)
 
 int main()
 {
+    vector<string> cls[100];            // Store classified samples
+    vector<double> average_factor[100]; // Store distances for averaging
+
     // List files in sample and seed directories
     list_dir("/home/ubuntu/Desktop/code/programming-journey/lab/pattern-recognition/sample/unknown/", file_name);
-    list_dir("/home/ubuntu/Desktop/code/programming-journey/lab/pattern-recognition/sample/seedpoint", seed_name);
+    list_dir("/home/ubuntu/Desktop/code/programming-journey/lab/pattern-recognition/sample/seedpoint/", seed_name);
 
     // Load data for samples
-    for (size_t i = 0; i < file_name.size(); ++i)
+    for (int i = 0; i < file_name.size(); ++i)
     {
         string path = "sample/unknown/" + file_name[i];
         read_data(path, sample[i]);
     }
 
     // Load data for seeds
-    for (size_t i = 0; i < seed_name.size(); ++i)
+    for (int i = 0; i < seed_name.size(); ++i)
     {
         string path = "sample/seedpoint/" + seed_name[i];
         read_data(path, seed[i]);
     }
 
-    vector<string> cls[100];            // Store classified samples
-    vector<double> average_factor[100]; // Store distances for averaging
-
     // Classify samples based on the closest seed
-    for (size_t i = 0; i < file_name.size(); ++i)
+    for (int i = 0; i < file_name.size(); ++i)
     {
+        // cout<<file_name[i]<<endl;
+        
         double min_dist = 1e9;
         int closest_seed = -1;
 
-        for (size_t j = 0; j < seed_name.size(); ++j)
+        for (int j = 0; j < seed_name.size(); ++j)
         {
             double dist = calculate_distance(i, j);
             if (dist < min_dist)
@@ -101,7 +103,7 @@ int main()
     cout << "\nEuclidean Distance\n";
     cout << "Classes\t\tClass Members\t\t\t\tAverage Error\n\n";
 
-    for (size_t i = 0; i < seed_name.size(); ++i)
+    for (int i = 0; i < seed_name.size(); ++i)
     {
         double total_error = 0.0;
 
@@ -109,11 +111,12 @@ int main()
         cout << seed_name[i] << "\t";
 
         // Print class members
-        for (size_t j = 0; j < cls[i].size(); ++j)
+        for (int j = 0; j < cls[i].size(); ++j)
         {
             if (j > 0)
                 cout << ", ";
             cout << cls[i][j].substr(0, cls[i][j].find('.')); // Print name without extension
+
             total_error += average_factor[i][j];
         }
 
