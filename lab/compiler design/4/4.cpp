@@ -1,5 +1,3 @@
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -29,6 +27,7 @@ int main() {
     // Read words from the input file
     while (cin >> st) {
         if (check(st)) {
+
             cout << st << " is a keyword\n";
         }
     }

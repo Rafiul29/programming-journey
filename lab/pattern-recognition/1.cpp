@@ -43,7 +43,7 @@ void read_data(const string &path, vector<double> &data)
     FILE *file = fopen(path.c_str(), "r");
     if (!file)
     {
-        cerr << "Failed to open file: " << path << endl;
+        cout << "Failed to open file: " << path << endl;
         return;
     }
     double value;

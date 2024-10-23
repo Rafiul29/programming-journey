@@ -72,5 +72,17 @@ int main()
         infixToPostfix(str); // Convert to postfix notation
         cout << endl;
     }
+    // while (true)
+    // {
+    //     string str;
+    //     cout<<"Enter Expresstion : ";
+    //     cin >> str;
+    //     if (str =="exit")
+    //     {
+    //         break;
+    //     }
+    //     infixToPostfix(str);
+    //     cout<<endl;
+    // }
     return 0;
 }

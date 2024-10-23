@@ -1,5 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
+// E   -> T Eds
+// Eds -> + T Eds | ε
+// T   -> F Tds
+// Tds -> * F Tds | ε
+// F   -> (E) | a | b | c
 
 int i = 0, error = 0;
 string str;
@@ -65,3 +70,6 @@ void F() {
         error = 1;
     }
 }
+// E() → T() → F() → 'a'
+// Tds() → '*' → F() → 'b'
+// Eds() → '+' → T() → F() → 'c'

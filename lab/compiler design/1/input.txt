@@ -1,51 +1,7 @@
-#include<cstdio>
-#include<iostream>
-#include<cctype>
-usingnamespacestd;
-intmain(){
-chart;
-intn;
-FILE*f1,*f2;
-//Openinputandoutputfiles
-f1=fopen("basir.txt","r");
-if(f1==NULL){
-cerr<<"Erroropeningbasir.txt"<<endl;
-return1;
-}
-f2=fopen("rajib.txt","w");
-if(f2==NULL){
-cerr<<"Erroropeningrajib.txt"<<endl;
-fclose(f1);
-return1;
-}
-//ReadcharactersuntilEOF
-while((t=getc(f1))!=EOF){
-if(t!=''&&isdigit(t)){
-//Ifcharacterisadigit,writetooutputfile
-putc(t,f2);
-}else{
-//Ifcharacterisnotadigit,processpotentialnumber
-n=0;
-//Continuereadingdigits
-while(isdigit(t)){
-putc(t,f2);//Writedigittooutputfile
-n=n*10+(t-'0');//Buildtheintegervalue
-t=getc(f1);//Readnextcharacter
-}
-//Ifanumberwasfound,printittotheconsole
-if(n){
-cout<<n<<endl;
-//Writeaspaceornewlineafterthenumberintheoutputfile(optional)
-putc('',f2);
-}
-//IfthenextcharacterisnotEOF,putitbackforfurtherprocessing
-if(t!=EOF){
-ungetc(t,f1);//Putbackthecharacterfornextiteration
-}
-}
-}
-//Closethefiles
-fclose(f1);
-fclose(f2);
-return0;
+#include <stdio.h>
+int main() {
+    int x = 100;
+    int y = 20;
+    printf("Value: %d\n", x);
+    return 0;
 }

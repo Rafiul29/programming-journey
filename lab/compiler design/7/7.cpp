@@ -17,10 +17,10 @@ int main() {
             break;
         }
     }
-
+// aaab
     // Find the position of the first character that is not 'b' from the end
     for (int i = len - 1; i >= 0; i--) {
-        if (str[i] != 'b') {
+        if (str[i] != 'b') { 
             b = i + 1; // The first character that is not 'b'
             break;
         }
@@ -30,7 +30,7 @@ int main() {
     if (a >= 0 && b < len && a + 1 == b) {
         flag = 1; // Valid string according to the grammar
     }
-
+    cout<<a<<b<<len;
     // Output the result
     if (flag == 1) {
         cout << endl << str << " is accepted." << endl;
