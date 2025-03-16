@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <button id="show">show</button>
+      <button id="hide">hide</button>
+      <button id="toggle">toggle</button>
+
+    </div>
+    <p id="para">This is a paragraph</p>
+   
+    <form action="" id="form">
+      <input type="text" placeholder="name" name="name" id="name" />
+      <input
+        type="text"
+        placeholder="description"
+        id="description"
+        name="description"
+      />
+      <button type="submit">submit</button>
+    </form>
+
+    <p>hello</p>
+    <script>
+      // $(document).ready(function(){
+      //   $('#para').click(function(){
+      //     $(this).hide();
+      //   })
+      // })
+
+      // form work
+
+      // The $(document).ready() method allows us to execute a function when the document is fully loaded.
+      $(document).ready(() => {
+        $("#form").submit((e) => {
+          e.preventDefault();
+
+          var name = $("#name").val();
+
+          var description = $("#description").val();
+
+          console.log({ description, name });
+        });
+
+        // $('#para').mouseleave(()=>{
+        //   alert('Mouse down over p1')
+        // })
+
+        // $('#para').focus(()=>{
+        //   $(this).css("background-color", "#cccccc");
+        //   // alert("mouse hover")
+        // })
+
+        // $("#para").hover(function () {
+        //   $(this).css("background-color", "red");
+        // });
+
+        // $("h").blur(function () {
+        //   $(this).css("background-color", "#ffffff");
+        // });
+
+        // $(document).on("hover", "#name", function () {
+        //   $(this).css("background-color", "red");
+        // });
+
+        // $(document).on("blur", "#name", function () {
+        //   $(this).css("background-color", "gray");
+        // });
+
+        // $(document).on("focus", "#description", function () {
+        //   $(this).css("background-color", "blue");
+        // });
+
+        // $(document).on("blur", "#description", function () {
+        //   $(this).css("background-color", "gray");
+        // });
+
+        // $("p").on({
+        //   mouseenter: function () {
+        //     $(this).css("background-color", "lightgray");
+        //   },
+        //   mouseleave: function () {
+        //     $(this).css("background-color", "lightblue");
+        //   },
+        //   click: function () {
+        //     $(this).css("background-color", "yellow");
+        //   },
+        // });
+
+        // show hide implement
+        // $('#show').click(()=>{
+        //   $('#para').show(1000)
+        // })
+        // $('#hide').click(()=>{
+        //   $('#para').hide(1000)
+        // })
+
+
+         $('#toggle').click(()=>{
+          $('#para').toggle(1000)
+        })
+      });
+    </script>
+  </body>
+</html>
