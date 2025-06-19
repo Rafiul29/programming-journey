@@ -64,3 +64,8 @@ if x%2==0:
     print("even")
 else: 
     print("odd")   
+
+    if x%2==0:
+        print('event')
+    else:
+        print("odd")

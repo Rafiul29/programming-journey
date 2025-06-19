@@ -8,4 +8,4 @@ print(random()*10)
 print(randint(1,5))
 print(choice(['rafi','rakib','asfia']))
 
-sleep(5)
+# sleep(5)

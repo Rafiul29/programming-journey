@@ -19,3 +19,11 @@ for char in text:
 
 for i in range(1,10,2):
     print(i)
+
+
+# for  i in range(2,10,2):
+#     print(i,end='')
+
+while i<50:
+    print(i);
+    i=i+1;
