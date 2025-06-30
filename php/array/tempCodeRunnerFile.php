@@ -1,0 +1,2 @@
+<?php
+vegetableString1
